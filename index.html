@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup Landing Page Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <section class="form-section">
+            <h2>Landing Page Generator</h2>
+            <div class="input-group">
+                <label for="startup-name">Startup Name</label>
+                <input type="text" id="startup-name" placeholder="Enter your startup name" />
+            </div>
+            <div class="input-group">
+                <label for="tagline">Tagline</label>
+                <input type="text" id="tagline" placeholder="Short catchy tagline" />
+            </div>
+            <div class="input-group">
+                <label for="feature1">Feature 1</label>
+                <input type="text" id="feature1" class="feature-input" placeholder="First feature" />
+            </div>
+            <div class="input-group">
+                <label for="feature2">Feature 2</label>
+                <input type="text" id="feature2" class="feature-input" placeholder="Second feature" />
+            </div>
+            <div class="input-group">
+                <label for="feature3">Feature 3</label>
+                <input type="text" id="feature3" class="feature-input" placeholder="Third feature" />
+            </div>
+            <button id="add-feature-btn" type="button" class="small-btn">+ Add Feature</button>
+            <div class="input-group">
+                <label for="hero-image">Hero Image URL</label>
+                <input type="text" id="hero-image" placeholder="http://..." />
+            </div>
+            <div class="input-group">
+                <label for="bg-color">Background Color</label>
+                <input type="color" id="bg-color" value="#ffffff" />
+            </div>
+            <div class="input-group">
+                <label for="text-color">Text Color</label>
+                <input type="color" id="text-color" value="#333333" />
+            </div>
+            <div class="input-group">
+                <label for="theme">Theme</label>
+                <select id="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="gradient">Startup Gradient</option>
+                    <option value="minimal">Minimal</option>
+                </select>
+            </div>
+            <button id="generate-btn">Generate Preview</button>
+            <button id="download-btn">Download Landing Page</button>
+            <button id="copy-btn">Copy HTML</button>
+        </section>
+
+        <section class="preview-section">
+            <h2>Live Preview</h2>
+            <div id="preview" class="theme-light"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* general resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-section,
+.preview-section {
+    flex: 1 1 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.small-btn {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    background: #6c757d;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+input[type="color"] {
+    width: 50px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+/* hero image support for preview */
+#preview .hero {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+#preview .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    pointer-events: none;
+}
+
+#preview .hero h1,
+#preview .hero p {
+    position: relative;
+    z-index: 1;
+}
+
+#generate-btn {
+    background: #007bff;
+    color: #fff;
+}
+
+#download-btn {
+    background: #28a745;
+    color: #fff;
+}
+
+#copy-btn {
+    background: #ffc107;
+    color: #333;
+}
+
+/* preview themes */
+.theme-light {
+    background: #fff;
+    color: #333;
+}
+
+.theme-dark {
+    background: #2c2c2c;
+    color: #f4f4f4;
+}
+
+.theme-gradient {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+}
+
+.theme-minimal {
+    background: #fff;
+    color: #000;
+    font-family: Arial, sans-serif;
+}
+
+/* landing page template styles */
+#preview .hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#preview .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+#preview .hero p {
+    font-size: 1.25rem;
+}
+
+#preview .features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+}
+
+#preview .features div {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 6px;
+    flex: 1 1 30%;
+    margin: 0 10px;
+    text-align: center;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #preview .features {
+        flex-direction: column;
+    }
+
+    #preview .features div {
+        margin: 10px 0;
+    }
+}
