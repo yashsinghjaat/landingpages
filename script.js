@@ -6,6 +6,11 @@ function generateLandingPage() {
     const heroImage = document.getElementById('hero-image').value;
     const bgColor = document.getElementById('bg-color').value;
     const textColor = document.getElementById('text-color').value;
+    const aboutTitle = document.getElementById('about-title').value;
+    const aboutDescription = document.getElementById('about-description').value;
+    const contactEmail = document.getElementById('contact-email').value;
+    const contactPhone = document.getElementById('contact-phone').value;
+    const contactAddress = document.getElementById('contact-address').value;
 
     // gather features dynamically
     const featureElements = document.querySelectorAll('.feature-input');
@@ -20,13 +25,23 @@ function generateLandingPage() {
 
     const heroStyle = heroImage ? `background-image:url('${heroImage}');` : '';
 
+    const aboutHtml = aboutTitle || aboutDescription ? `<section id="about" class="section"><h2>${aboutTitle || 'About Us'}</h2><p>${aboutDescription || 'Learn more about our mission.'}</p></section>` : '';
+
+    const contactHtml = contactEmail || contactPhone || contactAddress ? `<section id="contact" class="section"><h2>Contact Us</h2><p>Email: ${contactEmail || 'N/A'}</p><p>Phone: ${contactPhone || 'N/A'}</p><p>Address: ${contactAddress || 'N/A'}</p></section>` : '';
+
     const template = `
-<section class="hero" style="${heroStyle}">
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+<section id="home" class="hero" style="${heroStyle}">
     <h1>${name || 'Your Startup'}</h1>
     <p>${tagline || 'A short, catchy tagline here'}</p>
 </section>
-
-${featureHtml}`;
+${featureHtml}
+${aboutHtml}
+${contactHtml}`;
 
     const preview = document.getElementById('preview');
     preview.className = '';
@@ -49,7 +64,7 @@ ${featureHtml}`;
 }
 
 // wire up buttons and inputs
-const inputs = ['startup-name','tagline','hero-image','bg-color','text-color'];
+const inputs = ['startup-name','tagline','hero-image','bg-color','text-color','about-title','about-description','contact-email','contact-phone','contact-address'];
 inputs.forEach(id => {
     document.getElementById(id).addEventListener('input', generateLandingPage);
 });
